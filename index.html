@@ -1,627 +1,356 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizzaria Del Col - Desde 1987</title>
-<link rel="icon" sizes="32x32" href="logo650x384.png">
-<link rel="icon" sizes="16x16" href="logo650x384.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assessoria de Imprensa | Crash Comunicação</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="crashico373x593.png" type="image/png">
+  
+  <!-- Google Fonts: Inter (moderna e clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  :root {
+    --roxo: #7a75b5;
+    --laranja: #f58634;
+    --amarelo: #ffc10a;
+    --branco: #ffffff;
+    --cinza: #f4f4f7;
+    --texto: #2b2b2b;
+  }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-<style>
-body { font-family: 'Roboto', sans-serif; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--texto);
+    background: var(--cinza);
+    line-height: 1.6;
+  }
 
-    h1, h2, h3 {
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-        color: #961E05;
-    }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-    .navbar {
-        background-color: #961E05;
-    }
+  header {
+    background: linear-gradient(rgba(122, 117, 181, 0.85), rgba(122, 117, 181, 0.95)), url('news720x1280.jpg') center/cover no-repeat;
+    color: var(--branco);
+    padding: 120px 0 80px;          /* ← REDUZIDO bastante (era 180/120) */
+    text-align: center;
+    position: relative;
+  }
 
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
+  header .logo {
+    position: absolute;
+    top: 20px;                      /* ← um pouco mais pra cima */
+    left: 30px;
+    z-index: 10;
+  }
 
-    .logo-navbar {
-        height: 44px;
-        width: auto;
-    }
+  header .logo img {
+    height: 55px;                   /* ← levemente menor pra combinar */
+  }
 
-@media (max-width: 767.98px) {
-    #fotos .row {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    #fotos h2,
-    #fotos p {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-    }
-    
-    #fotos .col-md-5,
-    #fotos .col-md-7 {
-        width: 100%;
-    }
-    
-    #fotos .carousel-small {
-        margin-top: 1.5rem;
-    }
-}
+  header h1 {
+    font-size: 3.2rem;              /* ← REDUZIDO de 3.8rem */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
 
+  .hero-text {
+    margin: 1.5rem 0 2rem;          /* ← margens reduzidas */
+    font-size: 1.35rem;             /* ← texto menor pra caber melhor */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-
-.navbar-brand, .nav-link { color: white !important; }
-
-.hero {
-    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-    url("33537x465.png") center/cover;
-    height: 60vh;
+  .highlight-line {
+    margin-bottom: 0.9rem;          /* ← menos espaço entre linhas */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    gap: 10px;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    font-size: 1.15rem;             /* ← levemente menor */
+  }
+
+  .highlight-line i {
+    font-size: 1.6rem;
+    color: var(--laranja);
+    min-width: 35px;
     text-align: center;
-}
+    transition: transform 0.3s ease;
+  }
 
- .brand-text {
-        color: white;
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin: 0;
-        display: none; /* só aparece em desktop */
-    }
+  .highlight-line:hover i {
+    transform: scale(1.2) rotate(10deg);
+  }
 
-    @media (min-width: 992px) {
-        .logo-navbar { height: 54px; }
-        .brand-text { display: block; }
-    }
-
-    .navbar-brand, .nav-link { color: white !important; }
-
-    .hero {
-        background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-                    url("33537x465.png") center/cover no-repeat;
-        min-height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        padding: 2.5rem 1rem;
-    }
-
-    .section-padding { padding: 3rem 1rem; }
-
-    @media (min-width: 768px) {
-        .section-padding { padding: 5rem 1rem; }
-    }
-
-    .quem-somos-text {
-        text-align: center;
-        padding: 0 1rem;
-    }
-
-    @media (min-width: 768px) {
-        .quem-somos-text {
-            text-align: left;
-            padding: 0;
-        }
-    }
-
-.cardapio-watermark {
-    position: relative;
-    overflow: hidden;
-}
-
-.cardapio-watermark::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 10%;                 /* puxa pra esquerda */
-    width: 40%;
-    height: 100%;
-    background: url("logo650x384.png") no-repeat center;
-    background-size: 300px auto;
-    opacity: 0.10;
-    pointer-events: none;
-}
-
-.section-padding { padding: 60px 0; }
-.bg-light-gray { background-color: #f8f9fa; }
-
-.menu-scroll {
-    max-height: 500px;
-    overflow-y: auto;
-    border: 3px solid #45A25C;
-    padding: 20px;
-    border-radius: 15px;
-    background: white;
-}
-
-.menu-item {
-    border-bottom: 1px dotted #ccc;
-    padding: 6px 0;
-    font-size: 0.95rem;
-}
-
-.menu-title {
-    color: #45A25C;
-    margin-top: 20px;
-}
-
-
-.bg-cantina {
-    background-color: #fdfdfd;
-    background-image:
-        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-}
-
-/* FUNDO CANTINA GARANTIDO NA SESSÃO DE FOTOS */
-#fotos {
-    background-color: #fdfdfd;
-    background-image:
-        linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px),
-        linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-}
-
-/* REMOVE QUALQUER FUNDO ESCURO DO CARROSSEL */
-#fotos .carousel,
-#fotos .carousel-inner,
-#fotos .carousel-item {
-    background: transparent !important;
-}
-
-/* IMAGENS MENORES, SEM FUNDO */
-.carousel-small img {
-    max-height: 260px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    background: transparent !important;
-    display: block;
-    margin: auto;
-}
-
-
-/* SETAS MAIS SUAVES */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(40%);
-}
-
-.local-info {
-    color: #961E05;       /* mesma cor do endereço */
+  .btn {
+    display: inline-block;
+    background: var(--laranja);
+    color: var(--branco);
     font-weight: 600;
-}
+    padding: 14px 36px;             /* ← botão um pouco menor */
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(245,134,52,0.3);
+  }
 
-.footer {
-  background-color: #1a3c34;     /* ou a cor escura que você já usa */
-  color: #ffffff;
-  padding: 2.5rem 1rem;
-  border-top: 1px solid #333;    /* opcional: uma linha separadora em cima */
-}
+  .btn:hover {
+    transform: translateY(-4px);
+    background: var(--amarelo);
+    color: var(--texto);
+    box-shadow: 0 12px 30px rgba(255,193,10,0.4);
+  }
 
-.social-icons {
-  font-size: 2.1rem;             /* tamanho dos ícones – diminua para 1.8rem se achar grande */
-}
+  section {
+    padding: 70px 0;
+  }
 
-.social-icons a {
-  color: #ffffff;
-  margin: 0 1rem;                /* espaço entre os ícones */
-  transition: color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
-}
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--roxo);
+  }
 
-.social-icons a:hover {
-  color: #e74c3c;
-  transform: scale(1.15);
-}
+  .subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--texto);
+    max-width: 900px;
+    margin: 0 auto 2rem;
+  }
 
-.footer p {
-  margin: 0.5rem 0;
-  line-height: 1.4;
-}
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+  }
 
-.footer a {
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #e74c3c;
-  text-decoration: underline;
-}
-
-/* TEXTURA DE MADEIRA - CANTINA ITALIANA */
-#local {
-    background-color: #f4efe9;
-    background-image:
-        repeating-linear-gradient(
-            90deg,
-            rgba(120, 85, 55, 0.08) 0px,
-            rgba(120, 85, 55, 0.08) 40px,
-            rgba(140, 100, 65, 0.10) 40px,
-            rgba(140, 100, 65, 0.10) 80px
-        );
-}
-
-/* GARANTE LEITURA BOA */
-#local h2,
-#local p {
-    position: relative;
-    z-index: 2;
-}
-
-.icon-green { color: #45A25C; }
-.faixa-rolante {
-    height: 4cm;
-    background-color: #1a3c34;
+  .highlight-card {
+    background: var(--branco);
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    position: relative;
-    touch-action: pan-x;
-}
+  }
 
-.rolagem {
-    display: flex;
-    animation: rolar-infinito 18s linear infinite;  /* ajuste a velocidade aqui */
-    will-change: transform;
-}
+  .highlight-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(122,117,181,0.2);
+  }
 
-.icone {
-    height: 70%;
-    max-height: 110px;
-    margin: 0 28px;
-    flex-shrink: 0;
-    object-fit: contain;
-}
-
-/* Animação ajustada para 3 cópias → move -33.333% */
-@keyframes rolar-infinito {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-33.333%);
-    }
-}
-
-/* Pausa no hover/toque */
-.faixa-rolante:hover .rolagem,
-.faixa-rolante:active .rolagem {
-    animation-play-state: paused;
-}
-
-/* Mobile: mais rápido e menos margem */
-@media (max-width: 576px) {
-    .faixa-rolante {
-        height: 3.2cm;
-    }
-    .icone {
-        margin: 0 16px;
-        height: 65%;
-        max-height: 90px;
-    }
-    .rolagem {
-        animation-duration: 14s;   /* mais rápido no celular */
-    }
-}
-.faixa-verde-simples {
-    height: 2cm;                    /* metade da altura original (≈ 75-80px) */
-    background-color: #1a3c34;      /* mesmo verde escuro liso */
+  .highlight-card img {
     width: 100%;
-    margin: 1.5rem 0;               /* espaçamento suave em cima e embaixo */
-}
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 20px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1.8rem;
+    margin: 0.8rem 0;
+    color: var(--roxo);
+  }
+
+  .highlight-card p {
+    color: #555;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 100px 0 60px;        /* ← REDUZIDO no mobile */
+    }
+    header h1 {
+      font-size: 2.4rem;            /* ← menor no mobile */
+    }
+    .hero-text {
+      font-size: 1.2rem;
+    }
+    .highlight-line {
+      font-size: 1.1rem;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .highlight-line i {
+      font-size: 2rem;
+    }
+    section {
+      padding: 50px 0;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .highlight-grid {
+      margin: 30px 0;
+    }
+    .subtitle {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .service-card {
+    background: var(--branco);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(245,134,52,0.2);
+  }
+
+  .service-card h3 {
+    background: var(--roxo);
+    color: var(--branco);
+    padding: 22px;
+    font-size: 1.55rem;
+    text-align: center;
+  }
+
+  .service-card p {
+    padding: 30px;
+    font-size: 1.1rem;
+    color: #444;
+  }
+
+  footer {
+    background: var(--roxo);
+    color: var(--branco);
+    text-align: center;
+    padding: 80px 20px 50px;
+  }
+
+  footer h2 {
+    color: var(--branco);
+    margin-bottom: 1.5rem;
+  }
 </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top">
-<div class="container">
-<a class="navbar-brand" href="#">
-    <img src="logo650x384.png" alt="Pizzaria Del Col" class="logo-navbar">
-</a>
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div id="nav" class="collapse navbar-collapse">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#quem">Quem Somos</a></li>
-<li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
-<li class="nav-item"><a class="nav-link" href="#local">Localização</a></li>
-</ul>
-</div>
-</div>
-</nav>
-
-
-
-<header class="hero">
-
+  <header>
+  <div class="logo">
+    <a href="#topo"><img src="logo.png" alt="Crash Comunicação"></a>
+  </div>
+  <div class="container">
+    <h1>Assessoria de Imprensa</h1>
+    
+    <div class="hero-text">
+      <p class="highlight-line">
+        <i class="fas fa-calendar-check"></i> 
+        Mais de uma década contando novidades, histórias verdadeiras e de sucesso.
+      </p>
+      <p class="highlight-line">
+        <i class="fas fa-handshake"></i> 
+        Experiência nas relações com a imprensa para empresas de diversas áreas — desde veterinária até automotiva.
+      </p>
+    </div>
+     </div>
 </header>
 
+  <section style="background: var(--cinza);">
+    <div class="container">
+      <h2>Por que a Crash Comunicação?</h2>
+      <p class="subtitle">Como especialistas em comunicação, trabalhamos para aumentar sua presença nos meios de comunicação relevantes. Vamos construir e manter uma imagem positiva na mídia e alcançar seu público-alvo de maneira eficaz em um ambiente bastante competitivo.
+<br><br>
+<strong>Aumento da Visibilidade:</strong> Através da cobertura da imprensa, a empresa ganha mais exposição para seu público, sem a necessidade de gastar com anúncios.
+       <br><br>
+<strong>Reforço da Credibilidade:</strong> Uma presença positiva na mídia aumenta a confiança dos clientes e parceiros em sua marca.</p>
+      
+      
 
-<section id="quem" class="section-padding container">
-    <div class="row align-items-center g-4">
-        <div class="col-12 col-md-6">
-            <img src="salao800x450.jpg" class="img-fluid rounded-4" alt="Salão">
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <img src="redessociais960x960.jpg" alt="Visibilidade nas redes e mídia">
+          <h3>Visibilidade</h3>
+          <p>Aumento da exposição sem gastar com anúncios pagos</p>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="quem-somos-text">
-                <h2>Quem Somos</h2>
-                <p>Desde 1987, a <strong>Pizzaria Del Col</strong> é a escolha certa para quem quer comer bem.
-                Seja em seu aconchegante salão, delivery ou balcão, a Del Col está sempre pronta para atender seus clientes.</p> 
-
-                <p><strong>Sugestões:</strong> Viva Noite, Philadelphia e Marguerita.</p>
-
-                <p>E para os vegetarianos/veganos, temos a pizza Vegetariana.</p> 
-                <p>Em nossa massa não tem ovos, nem leite.</p>
-                <p>Trabalhamos com massa integral, feita na hora do pedido.</p>
-                <p>Consulte disponibilidade. **Pedimos pelo menos 30 minutos para o preparo.</p>
-                <p>Estamos também no Ifood: Pizzaria (família) Del Col</p>
-                <p>Promoções: Mussarela e Calabresa.</p>
-                <p>Borda recheada grátis (somente quando solicitado).</p>
-            </div>
+        <div class="highlight-card">
+          <img src="news720x1280.jpg" alt="Reconhecimento na imprensa">
+          <h3>Reconhecimento da Marca</h3>
+          <p>Construção consistente de presença no mercado</p>
         </div>
-    </div>
-</section>
-
-<div class="faixa-verde-simples"></div>
-<section id="cardapio" class="section-padding bg-light-gray cardapio-watermark">
-<div class="container">
-<h2 class="text-center mb-4">Cardápio</h2>
-
-<div class="menu-scroll">
-
-<h4 class="menu-title">🍕 Salgadas</h4>
-<div class="menu-item">ABOBRINHA – mussarela, abobrinha e parmesão</div>
-<div class="menu-item">ALCACHOFRA – mussarela, rodelas de alcachofra e parmesão</div>
-<div class="menu-item">ALEMÃ – mussarela, fatias de bacon e cebola</div>
-<div class="menu-item">ALHO – alho frito, parmesão ralado e molho de tomate salpicado</div>
-<div class="menu-item">ALHO PORÓ – mussarela, alho poró e parmesão ralado</div>
-<div class="menu-item">ALICHE – filés de anchova importada, parmesão e tomate</div>
-<div class="menu-item">AMERICANA – atum, palmito, ervilhas, cebola e mussarela</div>
-<div class="menu-item">ATUM – atum e cebola</div>
-<div class="menu-item">ATUM C/ MUSSARELA OU CATUPIRY</div>
-<div class="menu-item">BACON – mussarela e fatias de bacon</div>
-<div class="menu-item">BAIANA – calabresa moída, cebola e pimenta</div>
-<div class="menu-item">BAURU – presunto, rodelas de tomate e mussarela</div>
-<div class="menu-item">BELA ITÁLIA – calabresa moída, ovos, cebola e catupiry</div>
-<div class="menu-item">BERINJELA À PARMEGIANA – berinjela refogada e mussarela</div>
-<div class="menu-item">BRASILEIRINHA – palmito, ervilha, cebola e mussarela</div>
-<div class="menu-item">BRÓCOLIS – brócolis, mussarela ou catupiry e bacon</div>
-<div class="menu-item">CALABRESA – calabresa fatiada e cebola <span class="destaque">**promoção**</span></div>
-<div class="menu-item">CALABRESA C/ MUSSARELA OU CATUPIRY – calabresa, mussarela ou catupiry e cebola</div>
-<div class="menu-item">CALZONE À MODA – mussarela, catupiry e presunto</div>
-<div class="menu-item">CAMARÃO – camarão refogado com tomate e cebola</div>
-<div class="menu-item">CAMARÃO C/ CATUPIRY – camarão refogado com tomate e cebola, e catupiry</div>
-<div class="menu-item">CANELINHA – mussarela e alho frito</div>
-<div class="menu-item">CARNE SECA – carne seca desfiada e refogada com cebola, c/ mussarela ou catupiry</div>
-<div class="menu-item">CATUPIRY</div>
-<div class="menu-item">CATUPIRY COM BACON</div>
-<div class="menu-item">CHAMPIGNON – cogumelos com pedacinhos de bacon e cobertura de mussarela</div>
-<div class="menu-item">DA LAURA – palmito, cebola roxa, requeijão cremoso e parmesão</div>
-<div class="menu-item">DA MAMA – peito de peru picado, creme de leite, champignon, catupiry e bacon</div>
-<div class="menu-item">ESCAROLA – escarola refogada coberta de mussarela</div>
-<div class="menu-item">ESCAROLA C/ BACON – escarola refogada coberta de mussarela e bacon</div>
-<div class="menu-item">ESCAROLA C/ ALICHE – escarola refogada coberta de mussarela e aliche</div>
-<div class="menu-item">FRANGO – frango temperado com cebola, e catupiry</div>
-<div class="menu-item">FRANGO CAIPIRA – frango desfiado sem cebola, catupiry e milho</div>
-<div class="menu-item">FRANGO CAIPIRA 2 – frango desfiado, catupiry e bacon</div>
-<div class="menu-item">GORGONZOLA</div>
-<div class="menu-item">GREGA – presunto, milho, ervilha e mussarela</div>
-<div class="menu-item">LOMBO – lombinho canadense e cebola</div>
-<div class="menu-item">MARGUERITA – mussarela, manjericão, molho de tomate e parmesão</div>
-<div class="menu-item">MILHO C/ MUSSARELA OU CATUPIRY</div>
-<div class="menu-item">MILHO C/ MUSSARELA OU CATUPIRY E BACON (CORN & BACON)</div>
-<div class="menu-item">MODA – mussarela, catupiry e presunto picado</div>
-<div class="menu-item">MODA 2 – mussarela, catupiry, presunto picado e palmito</div>
-<div class="menu-item">MODINHA – lombo defumado, catupiry e cebola</div>
-<div class="menu-item">MUSSARELA – ótima mussarela em fatias bem douradas <span class="destaque">**promoção**</span></div>
-<div class="menu-item">MUSSARELA DE BÚFALA C/ RÚCULA – mussarela de búfala com tomate seco e rúcula</div>
-<div class="menu-item">NAPOLITANA – mussarela, rodelas de tomate e parmesão</div>
-<div class="menu-item">PALMITO COM MUSSARELA OU CATUPIRY</div>
-<div class="menu-item">PEITO DE PERU C/ CATUPIRY</div>
-<div class="menu-item">PEPPERONI – mussarela e pepperoni fatiado</div>
-<div class="menu-item">PHILADELPHIA – cream cheese, peito de peru, milho, alecrim e tomate cereja</div>
-<div class="menu-item">PHILADELPHIA 2 – cream cheese, alho poró e parmesão</div>
-<div class="menu-item">PHILADELPHIA 3 – cream cheese e pepperoni</div>
-<div class="menu-item">PORTUGUESA – mussarela, presunto picado, ovo e cebola</div>
-<div class="menu-item">PORTUGUESA 2 – mussarela, peito de peru picado, ovo e cebola</div>
-<div class="menu-item">PORTUGUESA LIGHT – mussarela de búfala, peito de peru picado, ovo e cebola</div>
-<div class="menu-item">PRIMAVERA – atum, escarola, mussarela e parmesão</div>
-<div class="menu-item">PROVOLONE – fatias de provolone com rodelas de tomate</div>
-<div class="menu-item">2 QUEIJOS – mussarela e catupiry</div>
-<div class="menu-item">4 QUEIJOS – mussarela, provolone, parmesão e catupiry</div>
-<div class="menu-item">5 QUEIJOS – mussarela, provolone, parmesão, catupiry e gorgonzola</div>
-<div class="menu-item">ROMANA – mussarela, filés de anchova e rodelas de tomate</div>
-<div class="menu-item">SICILIANA – mussarela, bacon, champignon e cebola</div>
-<div class="menu-item">SHITAKE – mussarela, shitake e parmesão ralado</div>
-<div class="menu-item">TOSCANA – calabresa moída com mussarela (ou catupiry)</div>
-<div class="menu-item">VEGETARIANA – palmito, ervilha, milho, champignon e cebola</div>
-<div class="menu-item">VEGETARIANA C/ MUSSARELA</div>
-<div class="menu-item">VIVA NOITE – mussarela, catupiry, lombo fatiado, manjericão, parmesão e tomate</div>
-
-
-<h4 class="menu-title">🍫 Doces</h4>
-<div class="menu-item doce">AVELINNA – creme de chocolate com avelã e morango</div>
-<div class="menu-item doce">BANANA – banana com calda, leite condensado e canela</div>
-<div class="menu-item doce">BANANA C/ CHOCOLATE – banana e creme de chocolate</div>
-<div class="menu-item doce">BRIGADEIRO – creme de chocolate e granulado</div>
-<div class="menu-item doce">BEIJINHO – creme de chocolate branco e coco ralado</div>
-<div class="menu-item doce">CALIFORNIA – mussarela, presunto picado, pêssego, figo e abacaxi</div>
-<div class="menu-item doce">CHOCOLATE C/ MORANGO – creme de chocolate preto ou branco e morango</div>
-<div class="menu-item doce">CHURROS – doce de leite, açúcar e canela</div>
-<div class="menu-item doce">DOCE DE LEITE COM COCO</div>
-<div class="menu-item doce">DOCE DE LEITE COM MORANGO</div>
-<div class="menu-item doce">DOIS AMORES – creme de chocolate preto e de chocolate branco</div>
-<div class="menu-item doce">SONHO DE VALSA – creme de leite, sonho de valsa, leite condensado, granulado e cereja</div>
-<div class="menu-item doce">PRESTÍGIO – creme de chocolate com coco ralado</div>
-
-</div>
-
-
-</div>
-</section>
-
-
-<section id="fotos" class="section-padding">
-    <<div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-12 col-md-5 mb-4 mb-md-0 text-center text-md-start">
-                <h2>Uma pizza melhor que a outra!</h2>
-                <p>
-                    🍕 Pizzas artesanais feitas com ingredientes selecionados, 
-                    forno a lenha e tradição desde 1987 ❤️
-                </p>
-            </div>
-
-            <div class="col-12 col-md-7">
-                <div id="carouselPizza" class="carousel slide carousel-small" data-bs-ride="carousel">
-
-                    <div class="carousel-inner text-center">
-
-                        <div class="carousel-item active">
-                            <img src="alhoporo625x400.png" alt="Alho Poró">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="bacon666x375.png" alt="Bacon">
-                        </div>
-                         <div class="carousel-item">
-                            <img src="portu631x195.png" alt="Portuguesa">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="calabresa597x418.png" alt="Calabresa">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="marguerita581x429.png" alt="Marguerita">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="mussa593x421.png" alt="Mussarela">
-                        </div>
-
-                    </div>
-
-                    <button class="carousel-control-prev"
-                        data-bs-target="#carouselPizza"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-
-                    <button class="carousel-control-next"
-                        data-bs-target="#carouselPizza"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-
-                </div>
-            </div>
-
+        <div class="highlight-card">
+          <img src="reuniao784x1168.jpg" alt="Credibilidade e confiança">
+          <h3>Credibilidade</h3>
+          <p>Presença positiva na imprensa fortalece a confiança</p>
         </div>
+        <div class="highlight-card">
+          <img src="redes2960x960.jpg" alt="Confiança com clientes e parceiros">
+          <h3>Confiança</h3>
+          <p>Clientes e parceiros enxergam sua empresa como referência</p>
+        </div>
+      </div>
+
+     
     </div>
-</section>
+  </section>
 
-<!-- ==================== FAIXA DE ÍCONES INSERIDA AQUI ==================== -->
-<div class="faixa-rolante">
-    <div class="rolagem">
-        <!-- Conteúdo original -->
-        <img src="icone1.png" alt="Ícone 1" class="icone">
-        <img src="icone2.png" alt="Ícone 2" class="icone">
-        <img src="icone3.png" alt="Ícone 3" class="icone">
-        <img src="icone4.png" alt="Ícone 4" class="icone">
-        <img src="icone5.png" alt="Ícone 5" class="icone">
-        <img src="icone6.png" alt="Ícone 6" class="icone">
+  <section>
+    <div class="container">
+      <h2>Serviços</h2>
+      <p class="subtitle">Soluções completas e estratégicas para posicionar sua marca onde realmente importa.</p>
 
-        <!-- Duplicata 1 -->
-        <img src="icone1.png" alt="Ícone 1" class="icone">
-        <img src="icone2.png" alt="Ícone 2" class="icone">
-        <img src="icone3.png" alt="Ícone 3" class="icone">
-        <img src="icone4.png" alt="Ícone 4" class="icone">
-        <img src="icone5.png" alt="Ícone 5" class="icone">
-        <img src="icone6.png" alt="Ícone 6" class="icone">
-
-        <!-- Duplicata 2 (garante preenchimento e transição suave) -->
-        <img src="icone1.png" alt="Ícone 1" class="icone">
-        <img src="icone2.png" alt="Ícone 2" class="icone">
-        <img src="icone3.png" alt="Ícone 3" class="icone">
-        <img src="icone4.png" alt="Ícone 4" class="icone">
-        <img src="icone5.png" alt="Ícone 5" class="icone">
-        <img src="icone6.png" alt="Ícone 6" class="icone">
-    </div>
-</div>
-<!-- ==================== FIM DA FAIXA ==================== -->
-
-<section id="local" class="section-padding localizacao-watermark">
-
-<div class="container text-center">
-<h2>Onde Estamos</h2>
-<p>
-    <a href="https://www.google.com/maps/place/Condom%C3%ADnio+Edif%C3%ADcio+Nossa+Senhora+da+Concei%C3%A7%C3%A3o+-+Av.+Le%C3%B4ncio+de+Magalh%C3%A3es,+1361+-+Jardim+S%C3%A3o+Paulo,+S%C3%A3o+Paulo+-+SP,+02042-011/@-23.4894,-46.6239001,1153m/data=!3m1!1e3!4m6!3m5!1s0x94cef6396e823f8b:0x723ef3b03752f975!8m2!3d-23.4895685!4d-46.6190836!16s%2Fg%2F11rgfz8y48?entry=ttu&g_ep=EgoyMDI2MDExMS4wIKXMDSoASAFQAw%3D%3D"
-       target="_blank"
-       style="color:#961E05; font-weight:600; text-decoration:none;">
-        Av. Leôncio de Magalhães, 1361 – Jd São Paulo
-    </a>
-</p>
-
-<p class="local-info">São Paulo, SP</p>
-
-<p class="local-info">
-    <i class="bi bi-telephone"></i>
-    2950-8473 • 2959-0792 • 2977-1777
-</p>
-
-<p class="local-info">
-    Horário de atendimento: terça a domingo, das 18h às 23h
-</p>
-</div>
-</section>
-
-<footer class="footer text-center py-4">
-  <div class="container">
-    <!-- Redes sociais no topo - centralizadas -->
-    <div class="social-icons d-flex justify-content-center gap-5 mb-4">
-      <a href="https://www.facebook.com/pizzariafamiliadelcol" target="_blank" aria-label="Facebook">
-        <i class="bi bi-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/delcolpizzaria/" target="_blank" aria-label="Instagram">
-        <i class="bi bi-instagram"></i>
-      </a>
-    </div>
-
-    <!-- Nome da pizzaria - centralizado -->
-    <p class="mb-2 fs-5 fw-bold">
-      Pizzaria Del Col<sup>®</sup> – Todos os direitos reservados
-    </p>
-
-    <!-- Desenvolvido por - centralizado e em branco -->
-    <p class="mb-0" style="font-size: 0.95rem; color: #ffffff;">
-      Desenvolvido por 
-      <a href="https://crashcom.com.br" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;">
-        Crash Comunicação
-      </a>
-    </p>
+      <div class="services-grid">
+  <div class="service-card">
+    <h3>Elaboração de Comunicados de Imprensa</h3>
+    <p>Criamos releases para promover seus produtos, serviços, eventos ou conquistas, desde lançamentos, novas aplicações até participações em eventos.</p>
   </div>
-</footer>
+  <div class="service-card">
+    <h3>Disparo para os Jornalistas</h3>
+    <p>Envio estratégico e segmentado para a imprensa certa, com abordagem personalizada para cada jornalista e veículo.</p>
+  </div>
+  <div class="service-card">
+    <h3>Monitoramento de Mídia</h3>
+    <p>Acompanhamento da cobertura midiática para avaliar o impacto das estratégias e identificação de oportunidades.</p>
+  </div>
+  <div class="service-card">
+    <h3>Gestão de Entrevistas e Relacionamento com a Mídia</h3>
+    <p>Contato regular com jornalistas, editores e influenciadores do seu setor para garantir uma cobertura positiva e relevante, sugerindo pautas e entrevistas com um porta-voz da empresa.</p>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer id="contato">
+    <div class="container">
+      <h2>Quer aumentar a visibilidade e credibilidade da sua marca?</h2>
+      <p style="font-size: 1.4rem; margin: 1.5rem 0 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">Conte com os Crashers e transforme sua história em notícia de impacto.</p>
+      <a href="mailto:contato@crashcom.com.br" class="btn">Vamos conversar!</a>
+      <p style="margin-top: 60px; opacity: 0.9; font-size: 0.95rem;">© 2026 Crash Comunicação. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
