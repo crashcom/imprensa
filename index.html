@@ -21,6 +21,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Material Icons (para os ícones de jornais, revistas e mídia) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
   :root {
@@ -30,6 +34,7 @@
     --branco: #ffffff;
     --cinza: #f4f4f7;
     --texto: #2b2b2b;
+    --texto-claro: #ffffff;
   }
 
   * {
@@ -127,6 +132,96 @@
     box-shadow: 0 12px 30px rgba(255,193,10,0.4);
   }
 
+  /* --- Estilos Gerais da Faixa Rolante (Ticker) --- */
+  .ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-top: 3px solid var(--texto);
+    border-bottom: 3px solid var(--texto);
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    display: block;
+    text-decoration: none; /* Garante que o link na faixa não crie sublinhados indesejados */
+  }
+
+  /* Variações de Cores das Faixas */
+  .ticker-orange {
+    background-color: var(--laranja);
+  }
+
+  .ticker-yellow {
+    background-color: var(--amarelo);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  /* Feedback visual de clique na faixa linkada */
+  a.ticker-wrap:hover {
+    filter: brightness(1.05);
+    cursor: pointer;
+  }
+
+  .ticker {
+    display: flex;
+    width: max-content;
+  }
+
+  .ticker-item-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    animation: marquee 35s linear infinite; /* 35s para uma rolagem elegante e constante */
+  }
+
+  .ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  /* Cores de texto específicas de cada faixa */
+  .ticker-orange .ticker-item {
+    color: var(--texto-claro);
+  }
+
+  .ticker-yellow .ticker-item {
+    color: var(--texto);
+  }
+
+  .ticker-item .material-icons {
+    font-size: 1.6rem;
+    vertical-align: middle;
+  }
+
+  /* Cores dos ícones em cada faixa */
+  .ticker-orange .material-icons {
+    color: var(--amarelo);
+  }
+
+  .ticker-yellow .material-icons {
+    color: var(--roxo);
+  }
+
+  /* Animação CSS para rolagem infinita e fluida */
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  /* Pausa a animação ao passar o mouse */
+  .ticker-wrap:hover .ticker-item-group {
+    animation-play-state: paused;
+  }
+
   section {
     padding: 70px 0;
   }
@@ -211,6 +306,9 @@
     .highlight-line i {
       font-size: 2rem;
     }
+    .ticker-item {
+      font-size: 1rem;
+    }
     section {
       padding: 50px 0;
     }
@@ -287,6 +385,52 @@
      </div>
 </header>
 
+  <!-- FAIXA ROLANTE 1: LARANJA CONCEITUAL (Loop Perfeito Ad Eternum) -->
+  <div class="ticker-wrap ticker-orange">
+    <div class="ticker">
+      <!-- Grupo 1 (Repetido internamente para preencher a tela antes do reinício do loop) -->
+      <div class="ticker-item-group">
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+        
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+      </div>
+      <!-- Grupo 2 (Garante a ilusão de rolagem contínua e sem fim) -->
+      <div class="ticker-item-group" aria-hidden="true">
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+        
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+
+        <div class="ticker-item"><span class="material-icons">diversity_3</span> Relacionamento</div>
+        <div class="ticker-item"><span class="material-icons">visibility</span> Visibilidade</div>
+        <div class="ticker-item"><span class="material-icons">workspace_premium</span> Reputação</div>
+        <div class="ticker-item"><span class="material-icons">history_edu</span> Conteúdo</div>
+        <div class="ticker-item"><span class="material-icons">record_voice_over</span> Porta-voz</div>
+      </div>
+    </div>
+  </div>
+
   <section style="background: var(--cinza);">
     <div class="container">
       <h2>Por que a Crash Comunicação?</h2>
@@ -325,6 +469,26 @@
     </div>
   </section>
 
+  <!-- FAIXA ROLANTE 2: AMARELA "EXTRA, EXTRA!" COM LINK -->
+  <a href="https://releases.crashcom.com.br/" target="_blank" class="ticker-wrap ticker-yellow">
+    <div class="ticker">
+      <!-- Grupo 1 -->
+      <div class="ticker-item-group">
+        <div class="ticker-item"><span class="material-icons">newspaper</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">menu_book</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">campaign</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">share</span> Extra, extra, conheça nosso trabalho!</div>
+      </div>
+      <!-- Grupo 2 (Garante a ilusão de rolagem contínua e sem fim) -->
+      <div class="ticker-item-group" aria-hidden="true">
+        <div class="ticker-item"><span class="material-icons">newspaper</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">menu_book</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">campaign</span> Extra, extra, conheça nosso trabalho!</div>
+        <div class="ticker-item"><span class="material-icons">share</span> Extra, extra, conheça nosso trabalho!</div>
+      </div>
+    </div>
+  </a>
+
   <section>
     <div class="container">
       <h2>Serviços</h2>
@@ -362,4 +526,4 @@
   </footer>
 
 </body>
-</html>
+</html> 
